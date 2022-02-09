@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    background-color: #5de6de;
+    background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#app {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns:  */
+    height: 100vh;
+    justify-content: center;
+    grid-gap: 10px;
+    font-size: 20px;
+    font-family: "Oswald", sans-serif;
+    padding: 40px;
+}
+
+.entry {
+    background: rgba(59, 74, 107, 0.2);
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+}
+
+#entryHolder {
+    color: #fff4b7;
+}
+
+.app-icon {
+    width: 400px;
+    position: absolute;
+    opacity: 50%;
+    filter: drop-shadow(20px 10px 10px black);
+    z-index: 1;
+}
+
+.headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    user-select: none;
+    grid-area: 1 / 1 / 3 / 5;
+    position: sticky;
+}
+.headline h1 {
+    font-size: 60px;
+    text-shadow: 2px 2px 15px black, 0px 0px 5px rgb(0, 217, 255),
+        -2px -2px 5px #fff34b;
+    z-index: 2;
+    color: #86c3d4;
+    animation-name: fontGlow;
+    animation-duration: 1600ms;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.zip {
+    grid-area: 3/2/3/4;
+}
+.feel {
+    grid-area: 4/2/4/3;
+}
+.entry {
+    grid-area: 4/4/4/3;
+    border: 2px solid #b5d8fd;
+    padding: 10px;
+}
+.title {
+    color: #fff4b7;
+}
+
+/*  Basic Styling To Override Default For Basic HTML Elements */
+label {
+    display: block;
+    font-size: 27px;
+    text-shadow: 2px 2px 5px black, 0px 0px 5px cyan;
+    color: #abe9cd;
+    margin-bottom: 5px;
+    user-select: none;
+}
+
+input {
+    display: block;
+    height: 46px;
+    width: 320px;
+    background: transparent;
+    color: #fff4b7;
+    font-size: 20px;
+    font-family: "Oswald", sans-serif;
+    padding: 5px;
+    border: 2px solid #b5d8fd;
+    border-radius: 20px;
+    padding-left: 20px;
+}
+
+button {
+    width: 400px;
+    height: 100px;
+    background: #3b4a6b;
+    color: #00d9ff;
+    font-size: 36px;
+    font-family: "Oswald", sans-serif;
+    border: none;
+    box-shadow: 4px 4px 5px black;
+    text-shadow: 2px 2px 5px black;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 500ms;
+    animation-name: borderGlow;
+    animation-duration: 2600ms;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+button:hover {
+    font-size: 38px;
+    text-shadow: 2px 2px 5px black, 0px 0px 10px rgb(0, 247, 255);
+    box-shadow: 5px 5px 10px black, 0px 0px 1px rgb(0, 247, 255);
+    border-radius: 35px;
+}
+
+textarea {
+    background: transparent;
+    font-size: 20px;
+    font-family: "Oswald", sans-serif;
+    padding: 5px;
+    border: 2px solid #b5d8fd;
+    resize: none;
+    color: #fff4b7;
+    padding-left: 15px;
+    border-radius: 20px;
+}
+/* Reset style for HTML element on active to have no border*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+/* Style for Placeholder Text*/
+::placeholder {
+    /* Firefox, Chrome, Opera */
+    color: #fff4b7;
+    font-family: "Oswald", sans-serif;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #fff4b7;
+    font-family: "Oswald", sans-serif;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #fff4b7;
+    font-family: "Oswald", sans-serif;
+}
+@keyframes fontGlow {
+    0% {
+        text-shadow: 2px 2px 15px black, 0px 0px 5px rgb(0, 217, 255),
+            -2px -2px 5px #fff460;
+    }
+    50% {
+        text-shadow: 2px 2px 15px black, 0px 0px 5px rgb(0, 217, 255),
+            -2px -2px 10px #fff34b;
+    }
+    100% {
+        text-shadow: 2px 2px 15px black, 0px 0px 5px rgb(0, 217, 255),
+            -2px -2px 15px #ffee00;
+    }
+}
+@keyframes borderGlow {
+    0% {
+        box-shadow: 3px 3px 4px rgb(0, 238, 255),
+            -3px -3px 4px rgb(255, 232, 103);
+    }
+    25% {
+        box-shadow: -3px 3px 4px rgb(0, 238, 255),
+            3px -3px 4px rgb(255, 232, 103);
+    }
+    50% {
+        box-shadow: 3px -3px 4px rgb(0, 238, 255),
+            -3px 3px 4px rgb(255, 232, 103);
+    }
+    75% {
+        box-shadow: -3px -3px 4px rgb(0, 238, 255),
+            3px 3px 4px rgb(255, 232, 103);
+    }
+    100% {
+        box-shadow: 3px -3px 4px rgb(0, 238, 255),
+            3px -3px 4px rgb(255, 232, 103);
+    }
+}
